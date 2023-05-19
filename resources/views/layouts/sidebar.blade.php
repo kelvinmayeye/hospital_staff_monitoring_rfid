@@ -2,8 +2,9 @@
     <nav id="sidebar" class="">
         <div class="sidebar-header">
             <a href="index.html"><img class="main-logo" src="{{ asset('assets/img/logo/logo.png') }}" alt="" /></a>
-            <strong><a href="index.html"><img src="{{ asset('assets/img/logo/logosn.png') }}"
-                        alt="" /></a></strong>
+            <strong><a href="{{ url('/') }}">
+                <img src="{{ asset('assets/img/logo/logosn.png') }}" alt="" />
+            </a></strong>
         </div>
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -11,30 +12,22 @@
                     <li class="active">
                         <a class="has-arrow" href="index.html">
                             <span class="educate-icon educate-home icon-wrap"></span>
-                            <span class="mini-click-non">Education</span>
+                            <span class="mini-click-non">Reception</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard
-                                        v.1</span></a></li>
+                            <li><a href="###"><span class="mini-sub-pro">Add Patient</span></a></li>
+                            <li><a href="##"><span class="mini-sub-pro">Patient Card</span></a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a title="Landing Page" href="events.html" aria-expanded="false"><span
-                                class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span>
-                            <span class="mini-click-non">Event</span></a>
                     </li>
                     <li>
                         <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span
                                 class="educate-icon educate-course icon-wrap"></span> <span
-                                class="mini-click-non">Courses</span></a>
+                                class="mini-click-non">Cards</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All
-                                        Courses</span></a></li>
-                            <li><a title="Add Courses" href="add-course.html"><span class="mini-sub-pro">Add
-                                        Course</span></a></li>
+                            <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All Cards</span></a></li>
                         </ul>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span
                                 class="educate-icon educate-data-table icon-wrap"></span> <span
                                 class="mini-click-non">Data Tables</span></a>
@@ -44,13 +37,13 @@
                             <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data
                                         Table</span></a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li id="removable">
                         <a class="has-arrow" href="#" aria-expanded="false"><span
                                 class="educate-icon educate-pages icon-wrap"></span> <span
-                                class="mini-click-non">Pages</span></a>
+                                class="mini-click-non">Patient records</span></a>
                         <ul class="submenu-angle page-mini-nb-dp" aria-expanded="false">
-                            <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
+                            <li><a title="Login" href="login.html"><span class="mini-sub-pro">Todays Patients Trends </span></a></li>
                             <li><a title="Register" href="register.html"><span
                                         class="mini-sub-pro">Register</span></a></li>
                         </ul>

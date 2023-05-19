@@ -22,7 +22,6 @@ return new class extends Migration
             $table->date('dob');
             $table->string('address');
             $table->string('phone_number')->unique();
-            $table->smallInteger('role')->default(0);
             $table->timestamps();
         });
     }
