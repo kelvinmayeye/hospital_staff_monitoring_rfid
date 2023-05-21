@@ -8,29 +8,18 @@
                         <div class="portlet-title">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="caption pro-sl-hd">
+                                    {{-- <div class="caption pro-sl-hd">
                                         <span class="caption-subject"><b>University Earnings</b></span>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                {{-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="actions graph-rp graph-rp-dl">
                                         <p>All Earnings are in million $</p>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
-                        <ul class="list-inline cus-product-sl-rp">
-                            <li>
-                                <h5><i class="fa fa-circle" style="color: #006DF0;"></i>CSE</h5>
-                            </li>
-                            <li>
-                                <h5><i class="fa fa-circle" style="color: #933EC5;"></i>Accounting</h5>
-                            </li>
-                            <li>
-                                <h5><i class="fa fa-circle" style="color: #65b12d;"></i>Electrical</h5>
-                            </li>
-                        </ul>
-                        <div id="extra-area-chart" style="height: 356px;"></div>
+                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -80,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="courses-area mg-b-15">
+    {{-- <div class="courses-area mg-b-15">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -174,5 +163,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
