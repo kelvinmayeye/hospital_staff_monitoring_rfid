@@ -10,7 +10,9 @@
     <!-- favicon
   ============================================ -->
     @include('layouts.header_links')
-    @include('partials.graphs.line_graph')
+    @if (strpos(url()->current(), 'dashboard') !== false)
+        @include('partials.graphs.line_graph')
+    @endif
 </head>
 
 <body>
@@ -107,7 +109,7 @@
   ============================================ -->
     {{-- <script src="{{ asset('assets/js/tawk-chat.js') }}"></script> --}}
 
-    
+
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 </body>
 

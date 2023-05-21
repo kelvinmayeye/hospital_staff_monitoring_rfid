@@ -1,8 +1,8 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="index.html"><img class="main-logo" src="{{ asset('assets/img/logo/logo.png') }}" alt="" /></a>
-            <strong><a href="{{ url('/') }}">
+            <a href="{{ url('dashboard') }}"><img class="main-logo" src="{{ asset('assets/img/logo/logo.png') }}" alt="" /></a>
+            <strong><a href="{{ url('dashboard') }}">
                     <img src="{{ asset('assets/img/logo/logosn.png') }}" alt="" />
                 </a></strong>
         </div>
