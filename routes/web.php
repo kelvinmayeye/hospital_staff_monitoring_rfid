@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\users\UsersController;
+use App\Http\Controllers\patientscard\PatientCardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::get('/', function () {
 Route::get('register',[UsersController::class,'getregister']);
 Route::post('register',[UsersController::class,'store']);
 Route::post('login',[UsersController::class,'login']);
+
+//patients
+Route::get('add_patient',[PatientCardController::class,'getAddPatients']);
+Route::post('add_patient',[PatientCardController::class,'store']);
