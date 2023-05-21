@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\users\UsersController;
 use App\Http\Controllers\patientscard\PatientCardController;
+use App\Http\Controllers\cards\CardsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,6 @@ Route::post('login',[UsersController::class,'login']);
 //patients
 Route::get('add_patient',[PatientCardController::class,'getAddPatients']);
 Route::post('add_patient',[PatientCardController::class,'store']);
+
+//card
+Route::get('all-cards',[CardsController::class,'allCards']);

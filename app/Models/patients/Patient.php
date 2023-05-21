@@ -13,4 +13,11 @@ class Patient extends Model
     public function getFullNameAttribute(){
         return $this->first_name .' '.$this->middle_name. ' ' . $this->last_name;
     }
+
+    public function getAgeAttribute(){
+        $dob = $this->attributes['dob'];
+        $today = date('Y-m-d');
+        $diff = date_diff(date_create($dob), date_create($today));
+        return $diff->y;
+        }
 }

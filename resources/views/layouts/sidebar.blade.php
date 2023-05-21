@@ -25,7 +25,7 @@
                                 class="educate-icon educate-course icon-wrap"></span> <span
                                 class="mini-click-non">Cards</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All
+                            <li><a href="{{ url('all-cards') }}"><span class="mini-sub-pro">All
                                         Cards</span></a></li>
                         </ul>
                     </li>
