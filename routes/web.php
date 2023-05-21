@@ -17,12 +17,12 @@ use App\Http\Controllers\cards\CardsController;
 */
 
 Route::get('/', function () {
-    return view('pages.dashboard');
+    return view('auth.login');
 });
 
 
 
-Route::get('register',[UsersController::class,'getregister']);
+Route::get('dashboard',[UsersController::class,'getDashboard']);
 Route::post('register',[UsersController::class,'store']);
 Route::post('login',[UsersController::class,'login']);
 

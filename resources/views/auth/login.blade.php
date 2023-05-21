@@ -84,7 +84,7 @@
                                     required="" value="" name="password" id="password" class="form-control">
                                 {{-- <span class="help-block small">Yur strong password</span> --}}
                             </div>
-                            <button class="btn btn-success btn-block loginbtn">Login</button>
+                            <a href="{{ url('dashboard') }}" class="btn btn-success btn-block loginbtn">Login</a>
                         </form>
                     </div>
                 </div>
