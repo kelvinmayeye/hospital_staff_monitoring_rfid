@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\patients\Patient;
+use App\Models\patientscards\PatientCard;
 
 class PatientCardController extends Controller
 {
     public function getAddPatients(){
         $patients = Patient::All();
-        return view('pages.patients.add_patients',compact('patients'));
+        $patientCards = PatientCard::all();
+        return view('pages.patients.add_patients',compact('patients','patientCards'));
     }
 
     public function store(Request $request){
