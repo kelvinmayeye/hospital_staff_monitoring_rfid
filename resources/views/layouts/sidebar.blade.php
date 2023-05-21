@@ -45,7 +45,7 @@
                                 class="educate-icon educate-pages icon-wrap"></span> <span
                                 class="mini-click-non">Patient records</span></a>
                         <ul class="submenu-angle page-mini-nb-dp" aria-expanded="false">
-                            <li><a title="Login" href="login.html"><span class="mini-sub-pro">Todays Patients Trends
+                            <li><a title="Login" href="login.html"><span class="mini-sub-pro">Patients Trends
                                     </span></a></li>
                             <li><a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a>
                             </li>
