@@ -1,7 +1,7 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="{{ url('dashboard') }}"><img class="main-logo" src="{{ asset('assets/img/logo/logo.png') }}" alt="" /></a>
+            <a href="{{ url('dashboard') }}"><span style="padding:10px;"><h4>Staff monitor</h4></span></a>
             <strong><a href="{{ url('dashboard') }}">
                     <img src="{{ asset('assets/img/logo/logosn.png') }}" alt="" />
                 </a></strong>
@@ -51,6 +51,8 @@
                             </li>
                         </ul>
                     </li>
+
+                    <a href="{{url('all-users')}}">Users</a>
                 </ul>
             </nav>
         </div>

@@ -2,9 +2,9 @@
 @section('content')
     <div class="single-pro-review-area mt-t-30 mg-b-15">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row m-5">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="product-payment-inner-st">
+                    <div class="product-payment-inner-st p-5">
                         <ul id="myTabedu1" class="tab-review-design">
                             <li class="active"><a href="#description">All Patients</a></li>
                             <li><a href="#reviews"> Add Patients</a></li>

@@ -7,8 +7,7 @@
     <title>Staff perfomarnce hostital</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-  ============================================ -->
+    <!-- favicon ============================================ -->
     @include('layouts.header_links')
     @if (strpos(url()->current(), 'dashboard') !== false)
         @include('partials.graphs.line_graph')

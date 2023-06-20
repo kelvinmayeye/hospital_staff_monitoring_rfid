@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('user_attendance', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('loggin_at');
             $table->date('logout_at');
             $table->unsignedBigInteger('office_id');
-            $table->foreign('office_id')->references('id')->on('offices')->onDelete('restrict');
+            $table->foreign('office_id')->references('id')->on('offices')->onDelete('cascade');
             $table->timestamps();
         });
     }

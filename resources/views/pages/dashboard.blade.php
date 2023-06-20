@@ -31,7 +31,7 @@
                                 <div id="sparklinedash"></div>
                             </li>
                             <li class="text-right sp-cn-r"><i class="fa fa-level-up" aria-hidden="true"></i> <span
-                                    class="counter text-success">1500</span></li>
+                                    class="counter text-success">{{ $totalPatient->count() }}</span></li>
                         </ul>
                     </div>
                     <div class="white-box analytics-info-cs mg-b-10 res-mg-b-30 tb-sm-res-d-n dk-res-t-d-n">

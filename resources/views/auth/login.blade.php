@@ -71,25 +71,25 @@
             <div class="content-error">
                 <div class="hpanel">
                     <div class="panel-body">
-                        <form action="#" id="loginForm">
+                        <form action="{{url('login')}}" method="post">
+                          @csrf
                             <div class="form-group">
                                 <label class="control-label" for="username">Username</label>
-                                <input type="text" placeholder="example@gmail.com" title="Please enter you username"
+                                <input type="email" name="email" placeholder="example@gmail.com" title="Please enter you email"
                                     required="" value="" name="username" id="username" class="form-control">
                                 {{-- <span class="help-block small">Your unique username to app</span> --}}
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="******"
-                                    required="" value="" name="password" id="password" class="form-control">
+                                <input type="password" name="password" class="form-control" title="Please enter your password" placeholder="******">
                                 {{-- <span class="help-block small">Yur strong password</span> --}}
                             </div>
-                            <a href="{{ url('dashboard') }}" class="btn btn-success btn-block loginbtn">Login</a>
+                            <button type="submit" href="{{ url('dashboard') }}" class="btn btn-success btn-block loginbtn">Login</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="text-center login-footer">
+            {{-- <div class="text-center login-footer"> --}}
             </div>
         </div>
     </div>
@@ -140,7 +140,7 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <!-- tawk chat JS
   ============================================ -->
-    <script src="{{ asset('assets/js/tawk-chat.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/tawk-chat.js') }}"></script> --}}
 </body>
 
 </html>

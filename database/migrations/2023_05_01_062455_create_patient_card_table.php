@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('patient_card', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('patient_id');
-            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('restrict');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->unsignedBigInteger('card_id');
-            $table->foreign('card_id')->references('id')->on('cards')->onDelete('restrict');
+            $table->foreign('card_id')->references('id')->on('cards')->onDelete('cascade');
             $table->smallInteger('status')->default(0);
             $table->timestamps();
         });

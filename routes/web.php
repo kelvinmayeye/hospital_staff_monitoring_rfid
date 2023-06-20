@@ -21,14 +21,17 @@ Route::get('/', function () {
 });
 
 
-
+Route::middleware("auth")->group(function(){
 Route::get('dashboard',[UsersController::class,'getDashboard']);
 Route::post('register',[UsersController::class,'store']);
 Route::post('login',[UsersController::class,'login']);
-
 //patients
 Route::get('add_patient',[PatientCardController::class,'getAddPatients']);
 Route::post('add_patient',[PatientCardController::class,'store']);
-
 //card
 Route::get('all-cards',[CardsController::class,'allCards']);
+//users
+Route::get('all-users',[CardsController::class,'allCards']);
+
+
+});
