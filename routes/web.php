@@ -18,20 +18,24 @@ use App\Http\Controllers\cards\CardsController;
 
 Route::get('/', function () {
     return view('auth.login');
-});
+})->name('login');
 
 
-Route::middleware("auth")->group(function(){
+
 Route::get('dashboard',[UsersController::class,'getDashboard']);
 Route::post('register',[UsersController::class,'store']);
 Route::post('login',[UsersController::class,'login']);
 //patients
-Route::get('add_patient',[PatientCardController::class,'getAddPatients']);
-Route::post('add_patient',[PatientCardController::class,'store']);
+Route::get('all-patients',[PatientCardController::class,'allPatients']);
+Route::get('add-patients',[PatientCardController::class,'getAddPatient']);
+Route::get('today-patient-cards',[PatientCardController::class,'getTodayPatientCards']);
+Route::post('add_patient',[PatientCardController::class,'storePatient']);
+Route::post('add-patient-card',[PatientCardController::class,'storePatientCard']);
 //card
 Route::get('all-cards',[CardsController::class,'allCards']);
 //users
 Route::get('all-users',[CardsController::class,'allCards']);
 
+Route::get('/logout', [UsersController::class,'logout'])->name('logout');
 
-});
+

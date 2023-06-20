@@ -1,115 +1,134 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Staff perfomarnce hostital</title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon ============================================ -->
-    @include('layouts.header_links')
-    @if (strpos(url()->current(), 'dashboard') !== false)
-        @include('partials.graphs.line_graph')
-    @endif
+    <!-- theme meta -->
+    <meta name="theme-name" content="focus" />
+    <title>{{ config('app.name') }}</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}">
+
+    <link href="{{ asset('assets/home/css/lib/calendar2/pignose.calendar.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/home/css/lib/chartist/chartist.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/home/css/lib/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/home/css/lib/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/home/css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/home/css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/home/css/lib/weather-icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/home/css/lib/menubar/sidebar.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/home/css/lib/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/home/css/lib/helper.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/home/css/style.css') }}" rel="stylesheet">
+
+    <style>
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Start Left menu area -->
-    @include('layouts.sidebar')
-    <!-- End Left menu area -->
-    <div class="all-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="{{ asset('assets/img/logo/logo.png') }}"
-                                alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @include('layouts.top_header')
+    {{-- sidemenu --}}
+    @include('layouts.side_menu')
+    {{-- topmenu --}}
+    @include('layouts.top_menu')
 
-        @yield('content')
-        <div class="footer-copyright-area">
+
+
+    <div class="content-wrap">
+        <div class="main">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-copy-right">
-                            <p>Copyright © 2023. All rights reserved. At <a href="https://site.mzumbe.ac.tz/"
-                                    target="_blank">Mzumbe Univercity</a></p>
+                <div class="p-2">
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <strong style="color: #ffffff">Error!</strong> {{ session()->get('error') }}
                         </div>
-                    </div>
+                    @elseif (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <strong style="color: #ffffff">Success!</strong> {{ session()->get('success') }}
+                        </div>
+                    @else
+                    @endif
                 </div>
+                @yield('content')
             </div>
         </div>
     </div>
 
-    <!-- jquery
-  ============================================ -->
-    <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
-    <!-- bootstrap JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <!-- wow JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
-    <!-- price-slider JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/jquery-price-slider.js') }}"></script>
-    <!-- meanmenu JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/jquery.meanmenu.js') }}"></script>
-    <!-- owl.carousel JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-    <!-- sticky JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
-    <!-- scrollUp JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/jquery.scrollUp.min.js') }}"></script>
-    <!-- counterup JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/counterup/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/counterup/waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/js/counterup/counterup-active.js') }}"></script>
-    <!-- mCustomScrollbar JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scrollbar/mCustomScrollbar-active.js') }}"></script>
-    <!-- metisMenu JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/metisMenu/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('assets/js/metisMenu/metisMenu-active.js') }}"></script>
-    <!-- morrisjs JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/morrisjs/raphael-min.js') }}"></script>
-    <script src="{{ asset('assets/js/morrisjs/morris.js') }}"></script>
-    <script src="{{ asset('assets/js/morrisjs/morris-active.js') }}"></script>
-    <!-- morrisjs JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/sparkline/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('assets/js/sparkline/jquery.charts-sparkline.js') }}"></script>
-    <script src="{{ asset('assets/js/sparkline/sparkline-active.js') }}"></script>
-    <!-- calendar JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/calendar/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/js/calendar/fullcalendar.min.js') }}"></script>
-    <script src="{{ asset('assets/js/calendar/fullcalendar-active.js') }}"></script>
-    <!-- plugins JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/plugins.js') }}"></script>
-    <!-- main JS
-  ============================================ -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-    <!-- tawk chat JS
-  ============================================ -->
-    {{-- <script src="{{ asset('assets/js/tawk-chat.js') }}"></script> --}}
+    <!-- jquery vendor -->
+    <script src="{{ asset('assets/home/js/lib/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/jquery.nanoscroller.min.js') }}"></script>
+    <!-- nano scroller -->
+    <script src="{{ asset('assets/home/js/lib/menubar/sidebar.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/preloader/pace.min.js') }}"></script>
+    <!-- sidebar -->
+
+    <script src="{{ asset('assets/home/js/lib/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/scripts.js') }}"></script>
+    <!-- bootstrap -->
+
+    <script src="{{ asset('assets/home/js/lib/calendar-2/moment.latest.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/calendar-2/pignose.calendar.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/calendar-2/pignose.init.js') }}"></script>
 
 
-    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script src="{{ asset('assets/home/js/lib/weather/jquery.simpleWeather.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/weather/weather-init.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/circle-progress/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/circle-progress/circle-progress-init.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/chartist/chartist.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/sparklinechart/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/sparklinechart/sparkline.init.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/lib/owl-carousel/owl.carousel-init.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ asset('assets/home/js/dashboard2.js') }}"></script>
 </body>
 
 </html>
