@@ -35,7 +35,9 @@ Route::post('add-patient-card',[PatientCardController::class,'storePatientCard']
 Route::get('all-cards',[CardsController::class,'allCards']);
 //users
 Route::get('all-users',[CardsController::class,'allCards']);
-
 Route::get('/logout', [UsersController::class,'logout'])->name('logout');
+
+//PatientCardRecords
+Route::get('patient-card-records',[PatientCardController::class,'getallPatientCardRecord']);
 
 

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PatientCardRecord extends Model
 {
     use HasFactory;
+
+    protected $table="patient_card_record";
 }

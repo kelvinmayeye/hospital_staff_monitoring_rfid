@@ -17,7 +17,7 @@
                         <li><a href="{{ url('all-cards') }}">All Cards</a>
                     </ul>
                 </li>
-                <li><a href="##"><i class="ti-bar-chart-alt"></i> Patients Records</a></li>
+                <li><a href="{{ url('patient-card-records') }}"><i class="ti-bar-chart-alt"></i> Patients Records</a></li>
 
             </ul>
         </div>

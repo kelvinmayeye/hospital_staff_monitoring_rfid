@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\patients\Patient;
 use App\Models\cards\Card;
 use App\Models\patientscards\PatientCard;
+use App\Models\patientscards\PatientCardRecord;
 use Carbon\Carbon;
 
 class PatientCardController extends Controller
@@ -38,6 +39,12 @@ class PatientCardController extends Controller
         $today = Carbon::now()->format('Y-m-d');
         $todayPatientsCards = PatientCard::whereDate('created_at', '=', $today)->get();
         return view('pages.patients.patients_card',compact('todayPatientsCards'));
+    }
+
+    public function getallPatientCardRecord(){
+        $today = Carbon::now()->format('Y-m-d');
+        $allPatientCardRecords = PatientCardRecord::whereDate('created_at', '=', $today)->get();
+        return view('pages.patients.patient_records',compact('allPatientCardRecords'));
     }
 
     public function storePatient(Request $request){
