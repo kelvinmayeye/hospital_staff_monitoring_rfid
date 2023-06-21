@@ -20,4 +20,8 @@ class Patient extends Model
         $diff = date_diff(date_create($dob), date_create($today));
         return $diff->y;
         }
+
+        public function patientCard(){
+            return $this->hasMany(PatientCard::class,'patient_id');
+        }
 }

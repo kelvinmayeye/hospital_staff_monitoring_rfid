@@ -20,13 +20,24 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($allPatientCardRecords as $key => $allPatientCardRecord)
+                                @foreach ($allPatientCardRecords as $key => $PatientCardRecord)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{ $PatientCardRecord->patientCard->patient->full_name }}</td>
+                                        <td>{{ $PatientCardRecord->patientCard->card->card_number }}</td>
+                                        <td>{{ $PatientCardRecord->scanner->office->name }}</td>
+                                        @php
+                                            $timeDifference = getTimeDifference($PatientCardRecord->id);
+                                            $formattedTimeDifference = $timeDifference->format('%H:%I:%S');
+                                        @endphp
+
+                                        <td>
+                                            @if ($formattedTimeDifference === '00:00:00')
+                                                Still on service
+                                            @else
+                                                {{ $formattedTimeDifference }}
+                                            @endif
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>

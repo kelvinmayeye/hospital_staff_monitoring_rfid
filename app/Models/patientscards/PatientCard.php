@@ -5,6 +5,7 @@ namespace App\Models\patientscards;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\patients\Patient;
+use App\Models\patientscards\PatientCardRecord;
 use App\Models\cards\Card;
 
 class PatientCard extends Model
@@ -16,8 +17,12 @@ class PatientCard extends Model
     public function patient(){
         return $this->belongsTo(Patient::class,'patient_id');
     }
-    
+
     public function card(){
         return $this->belongsTo(Card::class,'card_id');
+    }
+
+    public function patientCardRecord(){
+        return $this->hasMany(PatientCardRecord::class,'patient_card_id');
     }
 }

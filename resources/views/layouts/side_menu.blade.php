@@ -6,7 +6,7 @@
                         <!-- <img src="images/logo.png" alt="" /> --><span>Staff Monitor</span>
                     </a></div>
                 <li class="label">Main</li>
-                <li><a href="#"><i class="ti-home"></i> Dashboard</a></li>
+                <li><a href="{{ url('dashboard') }}"><i class="ti-home"></i> Dashboard</a></li>
 
                 <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Reception <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>

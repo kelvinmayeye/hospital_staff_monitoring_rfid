@@ -5,9 +5,12 @@ namespace App\Http\Controllers\users;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\patients\Patient;
+use App\Models\cards\Card;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
+use App\Models\patientscards\PatientCard;
 
 class UsersController extends Controller
 {
@@ -19,8 +22,13 @@ class UsersController extends Controller
          );
 
          $totalPatient = Patient::all();
+         $today = Carbon::now()->format('Y-m-d');
+        $todayPatientsCards = PatientCard::whereDate('created_at', '=', $today)->get();
+        $availableCards = Card::where('status',0)->get();
 
-        return view('pages.dashboard',compact('dataPoints','totalPatient'));
+        $totalDifference = getTotalTimeDifference();
+
+        return view('pages.dashboard',compact('dataPoints','totalPatient','todayPatientsCards','availableCards','totalDifference'));
     }
 
     public function login(Request $request){

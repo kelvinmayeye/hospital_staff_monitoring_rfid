@@ -23,7 +23,55 @@
     </div>
     <!-- /# row -->
     <section id="main-content">
-        
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="stat-widget-one">
+                        <div class="stat-icon dib"><i class="ti-wheelchair color-success border-success"></i>
+                        </div>
+                        <div class="stat-content dib">
+                            <div class="stat-text">Total Patients</div>
+                            <div class="stat-digit">{{ $totalPatient->count() }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="stat-widget-one">
+                        <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
+                        </div>
+                        <div class="stat-content dib">
+                            <div class="stat-text">Today's Patient Cards</div>
+                            <div class="stat-digit">{{ $todayPatientsCards->count() }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="stat-widget-one">
+                        <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                        </div>
+                        <div class="stat-content dib">
+                            <div class="stat-text">Available cards</div>
+                            <div class="stat-digit">{{ $availableCards->count() }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="stat-widget-one">
+                        <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                        <div class="stat-content dib">
+                            <div class="stat-text">Total service Time</div>
+                            <div class="stat-digit">{{ $totalDifference }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
       @endsection
